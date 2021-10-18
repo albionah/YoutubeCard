@@ -9,10 +9,15 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "useUnknownInCatchVariables": false,
     "strict": true,
     "noImplicitAny": false,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

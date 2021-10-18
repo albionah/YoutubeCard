@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import {css, customElement, html, LitElement, state, TemplateResult} from 'lit-element';
-import {getLovelace, HomeAssistant} from 'custom-card-helpers';
+import {css, CSSResult, customElement, html, LitElement, state, TemplateResult} from 'lit-element';
+import {getLovelace, HomeAssistant, LovelaceCard} from 'custom-card-helpers';
 import './youtube-instance.component';
 import {YoutubeCardConfig} from '../types';
 import {ICON} from '../const';
@@ -127,7 +127,7 @@ export class YoutubeCard extends LitElement {
 
     private showError(error: string): TemplateResult {
         console.error("Rendering Youtube card failed");
-        const errorCard = document.createElement('hui-error-card');
+        const errorCard = document.createElement('hui-error-card') as LovelaceCard;
         errorCard.setConfig({
             type: 'error',
             error,
@@ -139,7 +139,7 @@ export class YoutubeCard extends LitElement {
     `;
     }
 
-    static get styles() {
+    public static get styles(): CSSResult {
         return css`
             .yp__card {
             }
