@@ -1,9 +1,9 @@
-import {css, CSSResult, html, HTMLTemplateResult, LitElement} from 'lit';
-import {customElement, property, state} from 'lit/decorators.js';
-import {YoutubeControllerService} from '../Services/YoutubeController.service';
-import {dialogStyles} from './dialog-styles.css';
-import {Song} from '../DataTypes/Song';
-import '@material/mwc-linear-progress';
+import {css, CSSResult, html, HTMLTemplateResult, LitElement} from "lit";
+import {customElement, property, state} from "lit/decorators.js";
+import {YoutubeControllerService} from "../Services/YoutubeController.service";
+import {dialogStyles} from "./dialog-styles.css";
+import {Song} from "../DataTypes/Song";
+import "@material/mwc-linear-progress";
 
 @customElement("youtube-video-selector-dialog")
 export class YoutubeVideoSelectorDialog extends LitElement {

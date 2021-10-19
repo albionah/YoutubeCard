@@ -1,6 +1,6 @@
-import {css, CSSResult, html, LitElement, TemplateResult} from 'lit';
-import {customElement, property, state} from 'lit/decorators.js';
-import {YoutubeVideo} from '../DataTypes/YoutubeVideo';
+import {css, CSSResult, html, LitElement, TemplateResult} from "lit";
+import {customElement, property, state} from "lit/decorators.js";
+import {YoutubeVideo} from "../DataTypes/YoutubeVideo";
 
 @customElement("video-progress")
 export class VideoProgress extends LitElement {

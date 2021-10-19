@@ -1,15 +1,15 @@
-import {css, CSSResult, html, LitElement, TemplateResult} from 'lit';
-import {customElement, property, query, state} from 'lit/decorators.js';
-import {ICON} from '../const';
-import {YoutubeVideo} from '../DataTypes/YoutubeVideo';
-import {YoutubeCardConfig} from '../types';
-import './youtube-video-selector-dialog.component';
-import './auto-complete-dialog.component';
-import './video-progress.component';
-import {YoutubeControllerService} from '../Services/YoutubeController.service';
-import {MediaPlayerService} from '../Services/MediaPlayer.service';
-import {YoutubeVideoSelectorDialog} from './youtube-video-selector-dialog.component';
-import {LovelaceCard} from 'custom-card-helpers';
+import {css, CSSResult, html, LitElement, TemplateResult} from "lit";
+import {customElement, property, query, state} from "lit/decorators.js";
+import {ICON} from "../const";
+import {YoutubeVideo} from "../DataTypes/YoutubeVideo";
+import {YoutubeCardConfig} from "../types";
+import "./youtube-video-selector-dialog.component";
+import "./auto-complete-dialog.component";
+import "./video-progress.component";
+import {YoutubeControllerService} from "../Services/YoutubeController.service";
+import {MediaPlayerService} from "../Services/MediaPlayer.service";
+import {YoutubeVideoSelectorDialog} from "./youtube-video-selector-dialog.component";
+import {LovelaceCard} from "custom-card-helpers";
 
 @customElement("youtube-instance-component")
 export class YoutubeInstanceComponent extends LitElement {
@@ -35,11 +35,7 @@ export class YoutubeInstanceComponent extends LitElement {
         }
 
         return html`
-            <youtube-video-selector-dialog
-                id="browse_dialog"
-                .youtubeControllerService="${this.youtubeControllerService}"
-            >
-            </youtube-video-selector-dialog>
+            <youtube-video-selector-dialog id="browse_dialog" .youtubeControllerService="${this.youtubeControllerService}"> </youtube-video-selector-dialog>
             <div>
                 <div class="media_searching">
                     <auto-complete-dialog .youtubeControllerService="${this.youtubeControllerService}">

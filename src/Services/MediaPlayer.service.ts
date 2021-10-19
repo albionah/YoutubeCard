@@ -1,5 +1,5 @@
-import {HomeAssistant} from 'custom-card-helpers';
-import {EntityId} from '../DataTypes/EntityId';
+import {HomeAssistant} from "custom-card-helpers";
+import {EntityId} from "../DataTypes/EntityId";
 
 export class MediaPlayerService {
     private readonly hass: HomeAssistant;

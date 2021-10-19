@@ -1,4 +1,4 @@
-import {Song} from '../DataTypes/Song';
+import {Song} from "../DataTypes/Song";
 
 export class YoutubeControllerService {
     public youtubeControllerBaseUrl: string;

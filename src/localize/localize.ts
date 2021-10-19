@@ -1,4 +1,4 @@
-import * as en from './languages/en.json';
+import * as en from "./languages/en.json";
 
 const languages: any = {
     en: en,
