@@ -12,9 +12,28 @@ jobs:
   build:
     name: Test build
     runs-on: ubuntu-latest
+    env:
+      commitmsg: ${{ github.event.head_commit.message }}
     steps:
       - uses: actions/checkout@v1
       - name: Build
         run: |
           npm install
           npm run build
+      - uses: Klemensas/action-autotag@stable
+        id: update_tag
+        with:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          tag_prefix: "v"
+      - name: Create Release
+        if: steps.update_tag.outputs.tagname
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.update_tag.outputs.tagname }}
+          release_name: Release ${{ steps.update_tag.outputs.tagname }}
+          body: |
+            Changes in this Release:
+            ${{ env.commitmsg }}
