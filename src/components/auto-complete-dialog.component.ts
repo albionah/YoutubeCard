@@ -1,4 +1,5 @@
-import {css, customElement, html, LitElement, property, query, TemplateResult} from 'lit-element';
+import {css, html, LitElement, TemplateResult} from 'lit';
+import {customElement, property, query} from 'lit/decorators.js';
 import {YoutubeControllerService} from '../Services/YoutubeController.service';
 
 const UP_ARROW_CODE = "ArrowUp";

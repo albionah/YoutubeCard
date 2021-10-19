@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import {css, CSSResult, customElement, html, LitElement, state, TemplateResult} from 'lit-element';
+import {css, CSSResult, html, LitElement, TemplateResult} from 'lit';
+import {customElement, state} from 'lit/decorators.js';
 import {getLovelace, HomeAssistant, LovelaceCard} from 'custom-card-helpers';
 import './youtube-instance.component';
 import {YoutubeCardConfig} from '../types';

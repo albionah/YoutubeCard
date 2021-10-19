@@ -12,14 +12,11 @@
     "youtube"
   ],
   "dependencies": {
-    "@material/dialog": "^11.0.0",
-    "@material/mwc-button": "^0.21.0",
-    "@material/mwc-dialog": "^0.21.0",
-    "axios": "^0.23.0",
-    "custom-card-helpers": "^1.6.3",
-    "home-assistant-js-websocket": "^4.4.0",
-    "lit-element": "^2.2.1",
-    "lit-html": "^1.1.2"
+    "@material/mwc-button": "^0.25.2",
+    "@material/mwc-dialog": "^0.25.2",
+    "@material/mwc-linear-progress": "^0.25.2",
+    "custom-card-helpers": "^1.8.0",
+    "lit": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",

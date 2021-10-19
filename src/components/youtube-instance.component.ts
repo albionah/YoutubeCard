@@ -1,4 +1,5 @@
-import {css, CSSResult, customElement, html, LitElement, property, query, state, TemplateResult} from 'lit-element';
+import {css, CSSResult, html, LitElement, TemplateResult} from 'lit';
+import {customElement, property, query, state} from 'lit/decorators.js';
 import {ICON} from '../const';
 import {YoutubeVideo} from '../DataTypes/YoutubeVideo';
 import {YoutubeCardConfig} from '../types';

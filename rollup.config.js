@@ -37,6 +37,6 @@ export default [
             file: "dist/youtube-card.js",
             format: "es",
         },
-        plugins: [...plugins],
+        plugins: [...plugins]
     },
 ];
