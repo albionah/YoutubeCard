@@ -27,13 +27,13 @@ export class MediaPlayerService {
     }
 
     public watchVideo(videoId: string): void {
-        this.command("play_media", { media_content_type: "video", media_content_id: videoId });
+        this.command("play_media", {media_content_type: "video", media_content_id: videoId});
     }
 
     private command(commandName: string, options: object = {}): void {
-        this.hass.callService('media_player', commandName, {
+        this.hass.callService("media_player", commandName, {
             entity_id: this.entityId,
-            ...options
+            ...options,
         });
     }
 }

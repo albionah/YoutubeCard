@@ -3,5 +3,8 @@
     "version": "Version",
     "invalid_configuration": "Invalid configuration",
     "show_warning": "Show Warning"
+  },
+  "custom": {
+    "select_video": "Select video"
   }
 }

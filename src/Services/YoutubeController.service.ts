@@ -11,7 +11,7 @@ export class YoutubeControllerService {
         return (await this.getJson(`${this.youtubeControllerBaseUrl}/auto-complete-suggestions?query=${query}`)).results;
     }
 
-    public getSearchResults(query: string): Promise<{ query: string, results: Array<Song> }> {
+    public getSearchResults(query: string): Promise<{query: string; results: Array<Song>}> {
         return this.getJson(`${this.youtubeControllerBaseUrl}/search-results?query=${query}`);
     }
 

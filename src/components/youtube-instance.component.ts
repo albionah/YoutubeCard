@@ -53,12 +53,8 @@ export class YoutubeInstanceComponent extends LitElement {
                     </auto-complete-dialog>
                     <button @click=${() => this.browseVideos()}>Hledej</button>
                 </div>
-                <div class="media_info">
-                    ${this.renderMediaInfo(this.youtubeVideo)}
-                </div>
-                <div class="media_controls">
-                    ${this.renderMediaControls()}
-                </div>
+                <div class="media_info">${this.renderMediaInfo(this.youtubeVideo)}</div>
+                <div class="media_controls">${this.renderMediaControls()}</div>
                 <div style="margin-right: 2px">
                     <video-progress .youtubeVideo="${this.youtubeVideo}"></video-progress>
                 </div>
@@ -76,7 +72,7 @@ export class YoutubeInstanceComponent extends LitElement {
                 style="animation-duration: 1s;"
             >
                 <div class="marquee">
-                    <span class=${`attr__media_title`}>${youtubeVideo?.title ?? "<<nÃ¡zev neznÃ¡mÃ½>>"}</span>
+                    <span class=${"attr__media_title"}>${youtubeVideo?.title ?? "<<název neznámý>>"}</span>
                 </div>
             </div>
         `;
@@ -85,21 +81,11 @@ export class YoutubeInstanceComponent extends LitElement {
     private renderMediaControls(): TemplateResult {
         return html`
             <div class="flex mmp-media-controls__media">
-                <ha-icon-button
-                    @click=${event => this.watchPrevious(event)}
-                    .icon=${ICON.PREV}
-                    .disabled=${!this.youtubeVideo}
-                >
-                </ha-icon-button>
+                <ha-icon-button @click=${(event) => this.watchPrevious(event)} .icon=${ICON.PREV} .disabled=${!this.youtubeVideo}> </ha-icon-button>
 
                 ${this.renderPlayOrPauseButton()}
 
-                <ha-icon-button
-                    @click=${event => this.watchNext(event)}
-                    .icon=${ICON.NEXT}
-                    .disabled=${!this.youtubeVideo}
-                >
-                </ha-icon-button>
+                <ha-icon-button @click=${(event) => this.watchNext(event)} .icon=${ICON.NEXT} .disabled=${!this.youtubeVideo}> </ha-icon-button>
             </div>
         `;
     }
@@ -107,7 +93,7 @@ export class YoutubeInstanceComponent extends LitElement {
     private renderPlayOrPauseButton(): TemplateResult {
         return html`
             <ha-icon-button
-                @click=${event => this.playOrPause(event)}
+                @click=${(event) => this.playOrPause(event)}
                 .icon=${this.youtubeVideo?.isPlaying ? ICON.PAUSE : ICON.PLAY}
                 .disabled=${!this.youtubeVideo}
             >
@@ -164,9 +150,7 @@ export class YoutubeInstanceComponent extends LitElement {
             origConfig: this.config,
         });
 
-        return html`
-            ${errorCard}
-        `;
+        return html` ${errorCard} `;
     }
 
     public static get styles(): CSSResult {
@@ -198,6 +182,10 @@ export class YoutubeInstanceComponent extends LitElement {
                 padding: 10px;
                 font-size: 16px;
                 width: 100%;
+            }
+
+            #browse_dialog {
+                max-height: 80%;
             }
         `;
     }
