@@ -1,5 +1,5 @@
 import {css, CSSResult, html, HTMLTemplateResult, LitElement} from "lit";
-import {customElement, property, state} from "lit/decorators.js";
+import {customElement, property, query, state} from "lit/decorators.js";
 import {YoutubeControllerService} from "../Services/YoutubeController.service";
 import {dialogStyles} from "./dialog-styles.css";
 import {Song} from "../DataTypes/Song";
@@ -7,6 +7,7 @@ import "@material/mwc-linear-progress";
 
 @customElement("youtube-video-selector-dialog")
 export class YoutubeVideoSelectorDialog extends LitElement {
+    @query("mwc-dialog") private dialog;
     @property() public youtubeControllerService?: YoutubeControllerService;
     @state() private isLoading: boolean;
     @state() private songs: Array<Song>;
@@ -92,6 +93,16 @@ export class YoutubeVideoSelectorDialog extends LitElement {
 
     private openDialog(): void {
         this.isOpen = true;
+        this.centerDialog();
+    }
+
+    private centerDialog(): void {
+        const surfaceElement = this.dialog.shadowRoot.querySelector('.mdc-dialog__surface');
+        if (surfaceElement) {
+            const gap = (window.innerHeight - window.innerHeight * 0.9) / 2;
+            surfaceElement.style.top = `${window.scrollY + gap}px`;
+            surfaceElement.style.position = 'absolute';
+        }
     }
 
     private async loadData(query: string): Promise<void> {
